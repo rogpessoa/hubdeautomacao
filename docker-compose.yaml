@@ -1,0 +1,21 @@
+version: '3.7'
+
+services:
+  react-app:
+    build: .
+    ports:
+      - "8080:3000"  # O Traefik vai redirecionar para a porta 3000 dentro do container
+    networks:
+      - network_public
+    labels:
+      # Label para o Traefik rotear o tráfego para esse serviço
+      - "traefik.enable=true"
+      - "traefik.http.routers.react-app.rule=Host(`www.hubdeautomacao.com.br`)"
+      - "traefik.http.services.react-app.loadbalancer.server.port=3000"  # Porta interna da aplicação
+      - "traefik.http.routers.react-app.entrypoints=websecure"  # Usar entrypoint HTTPS
+      - "traefik.http.routers.react-app.tls.certresolver=letsencryptresolver"  # Usar Let's Encrypt para SSL
+
+networks:
+  network_public:
+    external: true
+    name: network_public

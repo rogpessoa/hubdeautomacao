@@ -1,0 +1,416 @@
+/* --- App Content --- */
+.content {
+  padding-top: 80px; /* Space for the fixed navbar */
+}
+
+/* --- Navbar --- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 1rem 5%;
+  background-color: rgba(30, 30, 30, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+/* Estilos da imagem da marca */
+.navbar-brand {
+  justify-self: start;
+}
+
+.navbar-brand .navbar-image {
+  height: 40px;
+  width: auto;
+}
+
+/* Estilos da lista de links */
+.navbar-links {
+  justify-self: center;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Estilo para os itens da lista */
+.navbar-links li {
+  margin-left: 2rem;
+}
+
+/* Estilo para os links */
+.navbar-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1rem;
+  font-weight: 500;
+  position: relative;
+}
+
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.navbar-links a:hover::after,
+.navbar-links a.active::after {
+  width: 100%;
+}
+
+/* --- Home Page --- */
+.home {
+  text-align: center;
+}
+
+.hero {
+  min-height: calc(100vh - 80px); /* Full viewport height minus navbar */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  /* Adicione uma imagem de fundo na sua pasta public/images para um efeito melhor */
+  background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.8));
+  background-size: cover;
+  background-position: center;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  animation: fadeInDown 1s ease-out;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  color: var(--text-muted);
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero .cta-button {
+  animation: fadeInUp 1s ease-out 0.5s;
+  animation-fill-mode: backwards;
+}
+
+.benefits {
+  padding: 4rem 2rem;
+  background-color: var(--background-light);
+}
+
+.benefits h2 {
+  margin-bottom: 3rem;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.benefit-card {
+  background-color: var(--background-dark);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.benefit-card img {
+  height: 50px;
+  margin-bottom: 1rem;
+}
+
+.benefit-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.cta-section {
+  padding: 4rem 2rem;
+}
+
+/* --- Contact Page --- */
+.contact {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+}
+
+.contact-links {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.contact-link .contact-icon {
+  width: 60px;
+  height: 60px;
+  transition: transform 0.3s ease;
+}
+
+.contact-link:hover .contact-icon {
+  transform: scale(1.1);
+}
+
+/* --- Sobre Page --- */
+.about-page {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.about-page h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+}
+
+.about-content {
+  max-width: 800px;
+  text-align: left;
+}
+
+/* --- Generic Page/Section Styles --- */
+.page-header, .home-section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.page-header h2, .home-section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.page-header p, .home-section-header p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  color: var(--text-muted);
+}
+
+/* --- Home Page Sections --- */
+.home-services, .home-projects {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.home-services {
+  background-color: var(--background-dark);
+}
+
+.home-projects {
+  background-color: var(--background-light);
+}
+
+.home-services .cta-button, .home-projects .cta-button {
+  margin-top: 3rem;
+}
+
+/* --- Serviços Page & Section --- */
+.servicos-page {
+  padding: 4rem 2rem;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.servicos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.servico-card {
+  background-color: var(--background-light);
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.servico-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.servico-icon svg {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 1.5rem;
+}
+
+.servico-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.servico-card p {
+  color: var(--text-muted);
+}
+
+
+/* --- Projetos Page & Section --- */
+.projetos-page {
+  padding: 4rem 2rem;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.projeto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projeto-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: var(--background-light);
+  height: 250px; /* Added for consistent card height */
+}
+
+.projeto-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.projeto-card:hover img {
+  transform: scale(1.1);
+}
+
+.projeto-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(18, 18, 18, 0.1), rgba(18, 18, 18, 0.9));
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  box-sizing: border-box;
+}
+
+.projeto-card:hover .projeto-overlay {
+  opacity: 1;
+}
+
+.projeto-overlay h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  transform: translateY(20px);
+  transition: transform 0.4s ease;
+}
+
+.projeto-card:hover .projeto-overlay h3 {
+  transform: translateY(0);
+}
+
+.projeto-overlay p {
+  font-size: 1rem;
+  transform: translateY(20px);
+  transition: transform 0.4s ease 0.1s;
+  opacity: 0;
+  color: var(--text-muted);
+}
+
+.projeto-card:hover .projeto-overlay p {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* --- Animations --- */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 2rem;
+  }
+  
+  /* Para um menu responsivo, você precisará de JavaScript para alternar a visibilidade */
+  .navbar-links {
+    display: none; /* Esconde os links em telas menores. Um botão "hambúrguer" os exibiria. */
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
