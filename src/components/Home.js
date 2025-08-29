@@ -36,7 +36,7 @@ const projects = [
   {
     image: '/images/E-commerce.png',
     title: 'Plataforma de E-commerce',
-    description: 'Criação de uma plataforma de e-commerce completa com automação de pagamentos e gestão de estoque.',
+    description: 'Automação de plataforma de e-commerce com gestão de pagamentos e gestão de estoque.',
   },
   {
     image: '/images/Sistema de CRM.png',
