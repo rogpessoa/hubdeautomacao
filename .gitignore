@@ -10,10 +10,10 @@
 
 # production
 /build
-#Dockerfile
+Dockerfile
 #package-lock.json
 #yarn.lock   
-#docker-compose.yaml
+docker-compose.yaml
 # misc
 .DS_Store
 .env.local
